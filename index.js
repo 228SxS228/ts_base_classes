@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.fifteenQuestion = void 0;
 var Tax = /** @class */ (function () {
     function Tax() {
     }
@@ -99,3 +102,207 @@ var FiveQuestion = /** @class */ (function () {
     return FiveQuestion;
 }());
 var fiveQuestion = new FiveQuestion().ageCheck(17);
+var SixQuestion = /** @class */ (function () {
+    function SixQuestion() {
+    }
+    SixQuestion.prototype.goCheck = function (age) {
+        if (age < 7) {
+            console.log("Тебе в сад");
+        }
+        else if (age > 7 && age < 18) {
+            console.log("Тебе в школу");
+        }
+        else if (age > 18 && age < 24) {
+            console.log("Тебе в универ");
+        }
+        else if (age > 24 && age < 60) {
+            console.log("Тебе на работу");
+        }
+        else if (age > 60) {
+            console.log("Тебе в больницу");
+        }
+        else {
+            console.log("Не коректный возраст");
+        }
+    };
+    return SixQuestion;
+}());
+var sixQuestion = new SixQuestion().goCheck(17);
+var SevenQuestion = /** @class */ (function () {
+    function SevenQuestion() {
+        this.a = "Денис";
+        this.b = "Антон";
+        this.c = "Саша";
+    }
+    SevenQuestion.prototype.nameCheck = function () {
+        if (this.c === this.b) {
+            console.log("Валите отсюда");
+        }
+        else if (this.c === this.a) {
+            console.log("Валите отсюда");
+        }
+        else {
+            console.log("Добро пожаловать");
+        }
+    };
+    return SevenQuestion;
+}());
+var sevenQuestion = new SevenQuestion().nameCheck();
+// class EightQuestion{
+//     public counter(callNumber: number){
+//         return function(){
+//             return ++callNumber
+//         }
+//     }
+// }
+var NineQuestion = /** @class */ (function () {
+    function NineQuestion() {
+    }
+    NineQuestion.prototype.waterCheck = function (a) {
+        if (a === 0) {
+            console.log("Лед");
+        }
+        else if (a === 1) {
+            console.log("Вода");
+        }
+        else if (a === 2) {
+            console.log("Пар");
+        }
+        else {
+            console.log("Не известное состояние");
+        }
+    };
+    return NineQuestion;
+}());
+var nineQuestion = new NineQuestion().waterCheck(2);
+var TenQuestion = /** @class */ (function () {
+    function TenQuestion() {
+    }
+    TenQuestion.prototype.genderCheck = function (a, b) {
+        if (a || b == "Гетеро") {
+            console.log("Любви и добра вам");
+        }
+        else if (a || b == "Гомосексуальный") {
+            console.log("Валите в америку");
+        }
+        else {
+            console.log("Не верное значение");
+        }
+    };
+    return TenQuestion;
+}());
+var tenQuerstion = new TenQuestion().genderCheck("Гетеро", "Гетеро");
+var ElevenQuestion = /** @class */ (function () {
+    function ElevenQuestion() {
+    }
+    ElevenQuestion.prototype.lineCheck = function (a, b) {
+        if (a.trim() && b.trim() === "") {
+            return console.log(false);
+        }
+        if (a || b !== "") {
+            if (/^\s*$/.test(a && b)) {
+                return console.log(false);
+            }
+        }
+    };
+    return ElevenQuestion;
+}());
+var elevenQuestion = new ElevenQuestion().lineCheck("", "");
+var TwelvQuestion = /** @class */ (function () {
+    function TwelvQuestion() {
+        this.a = "http://";
+        this.b = new RegExp("^(https?:\\/\\/)?");
+    }
+    TwelvQuestion.prototype.urlCheck = function () {
+        if (!!this.b.test(this.a)) {
+            console.log("Это урл");
+        }
+        else {
+            console.log("Это не урл");
+        }
+    };
+    return TwelvQuestion;
+}());
+var twelQuestion = new TwelvQuestion().urlCheck();
+var ThirteenQuestion = /** @class */ (function () {
+    function ThirteenQuestion() {
+    }
+    ThirteenQuestion.prototype.meanCheck = function (a) {
+        var b = a.reduce(function (a, b) { return a + b; }, 0);
+        var c = b / a.length;
+        if (function (c) { return 5; }) {
+            console.log("Фу ты отличник");
+        }
+        else if (c >= 4 && c < 5) {
+            console.log("Ты хорошист");
+        }
+        else if (c >= 3 && c < 4) {
+            console.log("Ты троечник");
+        }
+    };
+    return ThirteenQuestion;
+}());
+var trigteenQuestion = new ThirteenQuestion().meanCheck([3, 3, 3, 5, 4]);
+var FourteenQuestion = /** @class */ (function () {
+    function FourteenQuestion() {
+    }
+    FourteenQuestion.prototype.fioCheck = function (a, b) {
+        if (a === "Иван" && b === "Иванов") {
+            console.log("Комбо");
+        }
+        else if (a === "Иван" || b === "Иванов") {
+            console.log("Это мимо");
+        }
+        else {
+            console.log("Привет человек");
+        }
+    };
+    return FourteenQuestion;
+}());
+var fourteenQuestion = new FourteenQuestion().fioCheck("Иван", "Иванов");
+function fifteenQuestion(a) {
+    if (a > 0) {
+        console.log("Больше нуля");
+        return 0;
+    }
+    else {
+        console.log("Меньше нуля");
+        return 1;
+    }
+}
+exports.fifteenQuestion = fifteenQuestion;
+fifteenQuestion(4);
+var SixteenQuestion = /** @class */ (function () {
+    function SixteenQuestion() {
+    }
+    SixteenQuestion.prototype.checkRect = function (a, b, c, d) {
+        if (a == b && 2 * a == b) {
+            console.log("Это квадрат");
+        }
+        else if ((a = b) && (b = c) && (c = d)) {
+            console.log("Прямоугольник");
+        }
+        else {
+            console.log("Четырехугольник");
+        }
+    };
+    return SixteenQuestion;
+}());
+var sixteentQuestion = new SixteenQuestion().checkRect(4, 4, 4, 4);
+var SeventeenQuestion = /** @class */ (function () {
+    function SeventeenQuestion() {
+    }
+    SeventeenQuestion.prototype.checkUser = function (user) {
+        var yroki = [];
+        for (var i = 0; i < 100; ++i)
+            yroki[i] = i + 1;
+        if (user === true) {
+            console.log(yroki, "Вы премиум");
+        }
+        else if (user === false) {
+            console.log(yroki[0], "Вы не премиум");
+        }
+    };
+    return SeventeenQuestion;
+}());
+var seventeenQuestion = new SeventeenQuestion().checkUser(true);
