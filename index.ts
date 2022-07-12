@@ -1,9 +1,31 @@
 class Tax {
-    private vl1 = document.getElementById('input1') as HTMLInputElement | null;
-    private vl2 = document.getElementById('input2') as HTMLInputElement | null;
-    private vl3 = document.getElementById('input3') as HTMLInputElement | null;
     private itogo: number;
+
+    // public getValue(hp: number, stavka: number, count: number): number[] {
+    //     hp = parseFloat(
+    //         (<HTMLInputElement>document.getElementById("input1")).value
+    //     );
+    //     stavka = parseFloat(
+    //         (<HTMLInputElement>document.getElementById("input2")).value
+    //     );
+    //     count = parseFloat(
+    //         (<HTMLInputElement>document.getElementById("input3")).value
+    //     );
+    //     var p: number[] = [hp, stavka, count];
+    //     console.log(p);
+    //     return p;
+    // }
+
     public taxSum(hp: number, stavka: number, count: number): number {
+        hp = parseFloat(
+            (<HTMLInputElement>document.getElementById("input1")).value
+        );
+        stavka = parseFloat(
+            (<HTMLInputElement>document.getElementById("input2")).value
+        );
+        count = parseFloat(
+            (<HTMLInputElement>document.getElementById("input3")).value
+        );
         this.itogo = hp * this.isStavka(stavka) * (count / 12);
         console.log(this.itogo);
         return this.itogo;
@@ -22,9 +44,10 @@ class Tax {
         return hp;
     }
 }
-const tax = new Tax().taxSum(144, 144, 12);
 
-
+function test() {
+    new Tax().taxSum();
+}
 
 // class OneQuestion {
 //     public triangleCheck(int1: number, int2: number, int3: number) {

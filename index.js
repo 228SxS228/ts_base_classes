@@ -1,10 +1,24 @@
 var Tax = /** @class */ (function () {
     function Tax() {
-        this.vl1 = document.getElementById('input1');
-        this.vl2 = document.getElementById('input2');
-        this.vl3 = document.getElementById('input3');
     }
+    // public getValue(hp: number, stavka: number, count: number): number[] {
+    //     hp = parseFloat(
+    //         (<HTMLInputElement>document.getElementById("input1")).value
+    //     );
+    //     stavka = parseFloat(
+    //         (<HTMLInputElement>document.getElementById("input2")).value
+    //     );
+    //     count = parseFloat(
+    //         (<HTMLInputElement>document.getElementById("input3")).value
+    //     );
+    //     var p: number[] = [hp, stavka, count];
+    //     console.log(p);
+    //     return p;
+    // }
     Tax.prototype.taxSum = function (hp, stavka, count) {
+        hp = parseFloat(document.getElementById("input1").value);
+        stavka = parseFloat(document.getElementById("input2").value);
+        count = parseFloat(document.getElementById("input3").value);
         this.itogo = hp * this.isStavka(stavka) * (count / 12);
         console.log(this.itogo);
         return this.itogo;
@@ -23,7 +37,10 @@ var Tax = /** @class */ (function () {
     };
     return Tax;
 }());
-var tax = new Tax().taxSum(144, 144, 12);
+var tax = new Tax().taxSum();
+function test() {
+    new Tax().taxSum();
+}
 // class OneQuestion {
 //     public triangleCheck(int1: number, int2: number, int3: number) {
 //         if (int1 + int2 > int3) {
