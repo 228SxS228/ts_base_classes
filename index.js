@@ -37,9 +37,11 @@ var Tax = /** @class */ (function () {
     };
     return Tax;
 }());
-var tax = new Tax().taxSum();
 function test() {
-    new Tax().taxSum();
+    var elem2 = document.createElement("label");
+    elem2.innerHTML = new Tax().taxSum();
+    ;
+    document.getElementsByTagName("body")[0].appendChild(elem2);
 }
 // class OneQuestion {
 //     public triangleCheck(int1: number, int2: number, int3: number) {

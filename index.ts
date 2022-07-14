@@ -46,7 +46,9 @@ class Tax {
 }
 
 function test() {
-    new Tax().taxSum();
+    var elem2 = document.createElement("label");
+    elem2.innerHTML =  new Tax().taxSum();;
+    document.getElementsByTagName("body")[0].appendChild(elem2);
 }
 
 // class OneQuestion {
