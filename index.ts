@@ -1,7 +1,8 @@
 class Tax {
     private itogo: number;
 
-    public taxSum(hp: number, stavka: number, count: number): number {
+    public taxSum(hp?: number, stavka?: number, count?: number): number {
+       if(document){
         hp = parseFloat(
             (<HTMLInputElement>document.getElementById("input1")).value
         );
@@ -11,9 +12,14 @@ class Tax {
         count = parseFloat(
             (<HTMLInputElement>document.getElementById("input3")).value
         );
+        
         this.itogo = hp * this.isStavka(stavka) * (count / 12);
         console.log(this.itogo);
-        return this.itogo;
+        let elem2: HTMLElement = document.createElement("label") as HTMLElement; 
+        elem2.innerHTML = this.itogo;
+        document.getElementsByTagName("body")[0].appendChild(elem2);
+        return elem2;
+       }
     }
 
     private isStavka(hp: number): number {
@@ -31,10 +37,36 @@ class Tax {
 }
 
 function test() {
-    var elem2 = document.createElement("label");
-    elem2.innerHTML =  new Tax().taxSum();;
-    document.getElementsByTagName("body")[0].appendChild(elem2);
-}
+    // let elem2 = document.createElement("label");
+    // elem2.innerHTML =  new Tax().taxSum();;
+    // document.getElementsByTagName("body")[0].appendChild(elem2);
+    new Tax().taxSum();
+};
+
+// class Tax {
+//     private itogo: number;
+//     public taxSum(hp?: number, stavka?: number, count?: number): number {
+//         this.itogo = hp * this.isStavka(stavka) * (count / 12);
+//         console.log(this.itogo);
+//         return this.itogo;
+//     }
+
+//     private isStavka(hp: number): number {
+//         if (hp == 100) {
+//             hp = 8;
+//         }
+//         if (hp > 100 && hp <= 150) {
+//             hp = 34;
+//         }
+//         if (hp > 150 && hp <= 200) {
+//             hp = 35;
+//         }
+//         return hp;
+//     }
+// }
+// const tax = new Tax().taxSum(144, 144, 12);
+
+export default Tax;
 
 // class OneQuestion {
 //     public triangleCheck(int1: number, int2: number, int3: number) {
