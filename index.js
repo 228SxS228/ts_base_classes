@@ -1,20 +1,6 @@
 var Tax = /** @class */ (function () {
     function Tax() {
     }
-    // public getValue(hp: number, stavka: number, count: number): number[] {
-    //     hp = parseFloat(
-    //         (<HTMLInputElement>document.getElementById("input1")).value
-    //     );
-    //     stavka = parseFloat(
-    //         (<HTMLInputElement>document.getElementById("input2")).value
-    //     );
-    //     count = parseFloat(
-    //         (<HTMLInputElement>document.getElementById("input3")).value
-    //     );
-    //     var p: number[] = [hp, stavka, count];
-    //     console.log(p);
-    //     return p;
-    // }
     Tax.prototype.taxSum = function (hp, stavka, count) {
         hp = parseFloat(document.getElementById("input1").value);
         stavka = parseFloat(document.getElementById("input2").value);
