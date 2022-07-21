@@ -1,7 +1,7 @@
 class Tax {
     private itogo: number;
 
-    public taxSum(hp?: number, stavka?: number, count?: number): number {
+    public taxSum(hp?: number, stavka?: number, count?: number){
        if(document){
         hp = parseFloat(
             (<HTMLInputElement>document.getElementById("input1")).value
@@ -68,24 +68,7 @@ function test() {
 
 export default Tax;
 
-// class OneQuestion {
-//     public triangleCheck(int1: number, int2: number, int3: number) {
-//         if (int1 + int2 > int3) {
-//             if (int1 + int3 > int1) {
-//                 if (int2 + int3 > int1) {
-//                     console.log("Треугольник существует");
-//                 } else {
-//                     console.log("Треугольник не существует");
-//                 }
-//             } else {
-//                 console.log("Треугольник не существует");
-//             }
-//         } else {
-//             console.log("Треугольник не существует");
-//         }
-//     }
-// }
-// const oneQuestion = new OneQuestion().triangleCheck(4, 5, 6);
+// z
 
 // class TwoQuestion {
 //     private z: number;

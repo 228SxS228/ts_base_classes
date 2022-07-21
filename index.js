@@ -59,24 +59,35 @@ function test() {
 // }
 // const tax = new Tax().taxSum(144, 144, 12);
 exports["default"] = Tax;
-// class OneQuestion {
-//     public triangleCheck(int1: number, int2: number, int3: number) {
-//         if (int1 + int2 > int3) {
-//             if (int1 + int3 > int1) {
-//                 if (int2 + int3 > int1) {
-//                     console.log("Треугольник существует");
-//                 } else {
-//                     console.log("Треугольник не существует");
-//                 }
-//             } else {
-//                 console.log("Треугольник не существует");
-//             }
-//         } else {
-//             console.log("Треугольник не существует");
-//         }
-//     }
-// }
-// const oneQuestion = new OneQuestion().triangleCheck(4, 5, 6);
+var OneQuestion = /** @class */ (function () {
+    function OneQuestion() {
+    }
+    OneQuestion.prototype.triangleCheck = function () {
+        var _a = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            _a[_i] = arguments[_i];
+        }
+        var int1 = _a[0], int2 = _a[1], int3 = _a[2];
+        if (int1 + int2 > int3) {
+            if (int1 + int3 > int1) {
+                if (int2 + int3 > int1) {
+                    console.log("Треугольник существует");
+                }
+                else {
+                    console.log("Треугольник не существует");
+                }
+            }
+            else {
+                console.log("Треугольник не существует");
+            }
+        }
+        else {
+            console.log("Треугольник не существует");
+        }
+    };
+    return OneQuestion;
+}());
+var oneQuestion = new OneQuestion().triangleCheck(4, 5, 6);
 // class TwoQuestion {
 //     private z: number;
 //     public minCheck(a: number, b: number, c: number, d: number) {
